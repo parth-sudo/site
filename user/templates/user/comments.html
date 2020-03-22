@@ -1,0 +1,16 @@
+{% extends "user/base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block content %}
+<div id="content" class="container">
+    <form method="post">
+        {% csrf_token %}
+
+        {{comments|crispy}}
+           <input type="submit">
+
+        <button type="button" class="btn btn-primary">pub</button>
+    </form>
+</div>
+{% endblock %}

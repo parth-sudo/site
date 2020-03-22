@@ -1,0 +1,31 @@
+{% extends "user/base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block title %} Enter details :) {% endblock %}
+{% block content %}
+
+<div id="content" class="container">
+<h2> A Paytm gateway. Enter your details. </h2>
+</div>
+    <div class="container">
+ <div class='content-section ml-3' style="float:left;">
+      <form method="POST">
+          {% csrf_token %}
+          <input type="hidden" name="amount" id="amount">
+          <fieldset class="form-group">
+              <legend class="border-bottom mb-4"> Sign in </legend>
+              {{ form|crispy }}
+          </fieldset>
+          <div class="form-group">
+            <button type="submit" class="btn btn-success">Continue</button>
+          </div>
+      </form>
+ </div>
+</div>
+<!--
+<script>
+    $('#amount').val.($('#total').html())
+</script>
+-->
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "user/base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+<div class="container">
+    {{response}}
+    <div class="col my-4">
+   <h2> Payment status regarding order id {{response.ORDERID}}</h2>
+    {% if response.RESPCODE == '01' %}
+     ORDER SUCCESS!
+    {% else %}
+    ORDER FAILED.
+    {% endif %}
+
+    </div>
+</div>
+{% block content %}
+{% endblock %}
